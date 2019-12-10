@@ -26,7 +26,7 @@ jobs:
 
       - run: 
           name: Run tests
-          command: npm test
+          command: npm start && npm test
           environment:
             DB_CONNECTION_STRING: $DB_CONNECTION_STRING
 workflows:
