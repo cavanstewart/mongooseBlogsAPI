@@ -24,11 +24,13 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
+
+      - run:
+          name: export env vars
+          command: echo 'export DB_CONNECTION_STRING=$DB_CONNECTION_STRING' >> $BASH_ENV
       - run: 
           name: Run tests
           command: npm test
-          environment:
-            DB_CONNECTION_STRING: $DB_CONNECTION_STRING
 workflows:
   version: 2
   build-deploy:
