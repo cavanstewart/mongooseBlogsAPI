@@ -19,7 +19,7 @@ jobs:
 
       - run: npm install
 
-      - run: echo `${process.env.DB_CONNECTION_STRING}`
+      - run: echo "$process.env.DB_CONNECTION_STRING"
 
       - save_cache:
           paths:
