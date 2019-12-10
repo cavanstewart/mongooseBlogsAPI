@@ -3,7 +3,9 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-mongoose.connect(process.env.DB_CONNECTION_STRING, { useMongoClient: true });
+mongoose.connect(process.env.DB_CONNECTION_STRING, { useMongoClient: true }, function (err) {
+    if (err) throw err;
+});
 
 mongoose.Promise = Promise;
 
